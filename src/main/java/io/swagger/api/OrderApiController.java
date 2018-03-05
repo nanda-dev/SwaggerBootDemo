@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiParam;
@@ -19,9 +21,11 @@ import io.swagger.model.OrderDetails;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-03-05T12:35:53.697Z")
 
 @RestController
+@RequestMapping("/api")
 public class OrderApiController implements OrderApi {
 	Logger logger = LoggerFactory.getLogger(getClass());
 
+	@RequestMapping(value = "/order", produces = { "application/json" }, method = RequestMethod.POST)
 	public ResponseEntity<CreateOrderResponse> createOrder(
 			@ApiParam(value = "Created Order object", required = true) @Valid @RequestBody CreateOrderRequest orderRequest) {
 		logger.info("Create Order for Customer: {}", orderRequest.getCustomerId());

@@ -33,7 +33,8 @@ public interface OrderApi {
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "order creation successful", response = CreateOrderResponse.class) })
 
-	@RequestMapping(value = "/order", produces = { "application/json" }, method = RequestMethod.POST)
+	// @RequestMapping(value = "/order", produces = { "application/json" }, method =
+	// RequestMethod.POST)
 	ResponseEntity<CreateOrderResponse> createOrder(
 			@ApiParam(value = "Created Order object", required = true) @Valid @RequestBody CreateOrderRequest orderRequest);
 
