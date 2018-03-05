@@ -25,7 +25,7 @@ import io.swagger.model.OrderDetails;
 public class OrderApiController implements OrderApi {
 	Logger logger = LoggerFactory.getLogger(getClass());
 
-	@RequestMapping(value = "/order", produces = { "application/json" }, method = RequestMethod.POST)
+	//@RequestMapping(value = "/order", produces = { "application/json" }, method = RequestMethod.POST)
 	public ResponseEntity<CreateOrderResponse> createOrder(
 			@ApiParam(value = "Created Order object", required = true) @Valid @RequestBody CreateOrderRequest orderRequest) {
 		logger.info("Create Order for Customer: {}", orderRequest.getCustomerId());
