@@ -42,6 +42,6 @@ public interface OrderApi {
 
 	@RequestMapping(value = "/order/{orderId}", produces = { "application/json" }, method = RequestMethod.GET)
 	ResponseEntity<OrderDetails> getOrderDetails(
-			@ApiParam(value = "", required = true) @PathVariable("orderId") String orderId);
+			@ApiParam(value = "", required = true) @PathVariable("orderId") Long orderId);
 
 }
